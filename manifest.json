@@ -1,12 +1,17 @@
 {
   "manifest_version": 3,
   "name": "AniWorld Listen-Sicherung",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Sichert Watchlist und Abonnements lokal als JSON-Datei.",
   "permissions": ["storage", "downloads"],
   "host_permissions": ["https://aniworld.to/*", "https://aniworld.cc/*"],
+  "icons": {
+    "48": "icons/backup.svg",
+    "96": "icons/backup.svg"
+  },
   "action": {
     "default_title": "AniWorld Listen-Sicherung",
+    "default_icon": "icons/backup.svg",
     "default_popup": "popup.html"
   },
   "background": {
