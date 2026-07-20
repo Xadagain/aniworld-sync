@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       const result = await browser.runtime.sendMessage({ type: "export-backup" });
       await render(result.download.message);
     } catch (error) {
-      await render(`Download fehlgeschlagen: ${error.message}`);
+      await render(`Download failed: ${error.message}`);
     }
   });
 });
@@ -27,6 +27,6 @@ async function render(message) {
   } else if (exportStatus) {
     status.textContent = exportStatus.message;
   } else if (backup?.updatedAt) {
-    status.textContent = `Zuletzt aktualisiert: ${new Date(backup.updatedAt).toLocaleString("de-DE")}`;
+    status.textContent = `Last updated: ${new Date(backup.updatedAt).toLocaleString("en-US")}`;
   }
 }

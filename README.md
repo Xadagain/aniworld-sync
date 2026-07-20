@@ -1,59 +1,58 @@
-# AniWorld Listen-Sicherung
+# AniWorld List Backup
 
-Eine schlanke Firefox-Erweiterung, die deine AniWorld-Watchlist und abonnierten Serien als lokale JSON-Sicherung speichert.
+A lightweight Firefox extension that saves your AniWorld watchlist and subscriptions as a local JSON backup.
 
-Unterstuetzte Domains: `aniworld.to` und `aniworld.cc`.
+Supported domains: `aniworld.to` and `aniworld.cc`.
 
-## Funktionen
+## Features
 
-- Liest Watchlist und Abonnements automatisch aus, sobald du die jeweilige Seite besuchst.
-- Speichert beide Listen zusammen unter `Downloads/AniWorld-Sicherung/aniworld-listen.json`.
-- Ueberschreibt die Sicherung mit dem aktuellen Stand, statt neue Dateien anzulegen.
-- Entfernt eigene Sicherungsdownloads aus der Firefox-Downloadchronik. Die Datei bleibt dabei erhalten.
-- Ermoeglicht einen manuellen Export ueber das Erweiterungs-Symbol.
+- Reads your Watchlist and Subscriptions automatically when you visit their respective pages.
+- Saves both lists together to `Downloads/AniWorld-Backup/aniworld-lists.json`.
+- Replaces the previous backup with the latest data instead of creating additional files.
+- Removes its backup downloads from Firefox's download history while keeping the file itself.
+- Provides a manual export through the extension toolbar button.
 
-Die Erweiterung oeffnet keine Seiten selbst und synchronisiert nicht im Hintergrund. Sie sichert den Stand, den du beim Besuch der beiden Listen in Firefox siehst.
+The extension does not open pages itself and does not synchronize in the background. It saves the data Firefox can see when you visit the two list pages.
 
-## Verwendung
+## Usage
 
-1. Bei AniWorld anmelden.
-2. Die Watchlist unter `/account/watchlist` oeffnen.
-3. Die Seite **Abonniert** unter `/account/subscribed` oeffnen.
-4. Die Sicherung liegt anschliessend unter `Downloads/AniWorld-Sicherung/aniworld-listen.json`.
+1. Sign in to AniWorld.
+2. Open your Watchlist at `/account/watchlist`.
+3. Open Subscriptions at `/account/subscribed`.
+4. Find the backup at `Downloads/AniWorld-Backup/aniworld-lists.json`.
 
-Ein Klick auf das Erweiterungs-Symbol zeigt die Anzahl gespeicherter Eintraege und bietet einen manuellen Download an.
+Click the extension toolbar button to see the number of stored entries and download the latest backup manually.
 
 ## Installation
 
 ### Firefox Add-ons
 
-Nach der Freigabe auf Firefox Add-ons kann die Erweiterung dort dauerhaft installiert werden und erhaelt Updates direkt ueber Firefox.
+Once approved on Firefox Add-ons, the extension can be installed permanently and receives updates through Firefox.
 
-### Temporaer zum Testen
+### Temporary Testing
 
-1. `about:debugging#/runtime/this-firefox` in Firefox oeffnen.
-2. **Temporeres Add-on laden...** waehlen.
-3. `manifest.json` aus diesem Repository auswaehlen.
+1. Open `about:debugging#/runtime/this-firefox` in Firefox.
+2. Select **Load Temporary Add-on...**.
+3. Select `manifest.json` from this repository.
 
-Die temporaere Installation wird beim Neustart von Firefox entfernt. Die bereitgestellte XPI muss fuer eine dauerhafte Installation von Mozilla signiert sein.
+Temporary installations are removed when Firefox restarts. The supplied [`aniworld-list-backup.xpi`](aniworld-list-backup.xpi) must be signed by Mozilla before it can be installed permanently.
 
-## Datenschutz
+## Privacy
 
-Die Erweiterung verarbeitet Seriennamen, Serienlinks und gegebenenfalls Cover-Links ausschliesslich lokal. Sie speichert keine Zugangsdaten, Cookies oder Streamingdaten und uebertraegt keine Daten an Dritte. Details stehen im [Datenschutzhinweis](DATENSCHUTZ.md).
+The extension processes series titles, series URLs, and optional cover image URLs locally only. It does not store credentials, cookies, or streaming data, and it does not transmit data to third parties. See the [Privacy Notice](PRIVACY.md) for details.
 
-## Berechtigungen
+## Permissions
 
-| Berechtigung | Zweck |
+| Permission | Purpose |
 | --- | --- |
-| `storage` | Speichert den letzten Sicherungsstand lokal in Firefox. |
-| `downloads` | Erstellt die JSON-Datei im Downloads-Ordner. |
-| Zugriff auf AniWorld | Liest Watchlist und Abonnements auf `aniworld.to` und `aniworld.cc` aus. |
+| `storage` | Stores the most recent backup locally in Firefox. |
+| `downloads` | Creates the JSON backup file in the Downloads folder. |
+| AniWorld access | Reads the Watchlist and Subscriptions on `aniworld.to` and `aniworld.cc`. |
 
-## Entwicklung
+## Development
 
-Das Projekt besteht aus reinem JavaScript, HTML und CSS und benoetigt keine Abhaengigkeiten. Die XPI ist ein ZIP-Archiv, dessen Dateien direkt im Archiv-Stamm liegen.
+This project uses plain JavaScript, HTML, and CSS and has no dependencies. The XPI is a ZIP archive with its extension files at the archive root.
 
-## Hinweis
+## Disclaimer
 
-AniWorld Listen-Sicherung ist ein inoffizielles, unabhaengiges Projekt und steht in keiner Verbindung zu AniWorld.
-"# aniworld-sync" 
+AniWorld List Backup is an unofficial, independent project and is not affiliated with AniWorld.

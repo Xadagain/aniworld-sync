@@ -30,7 +30,7 @@ async function waitForListContainer() {
 }
 
 function detectListType() {
-  const path = window.location.pathname.toLocaleLowerCase("de-DE");
+  const path = window.location.pathname.toLocaleLowerCase("en-US");
 
   if (path === "/account/watchlist" || /^\/account\/watchlist\/(asc|desc)$/.test(path)) {
     return "watchlist";
@@ -78,7 +78,7 @@ function extractEntries() {
     });
   }
 
-  return entries.sort((left, right) => left.title.localeCompare(right.title, "de-DE"));
+  return entries.sort((left, right) => left.title.localeCompare(right.title, "en-US"));
 }
 
 function cleanText(value) {

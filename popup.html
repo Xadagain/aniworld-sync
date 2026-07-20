@@ -1,21 +1,21 @@
 <!doctype html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="popup.css">
-  <title>AniWorld Sicherung</title>
+  <title>AniWorld Backup</title>
 </head>
 <body>
   <main>
-    <h1>AniWorld Sicherung</h1>
-    <p id="status">Noch keine Listen gesichert.</p>
+    <h1>AniWorld Backup</h1>
+    <p id="status">No lists backed up yet.</p>
     <dl>
       <div><dt>Watchlist</dt><dd id="watchlist-count">0</dd></div>
-      <div><dt>Abonniert</dt><dd id="subscriptions-count">0</dd></div>
+      <div><dt>Subscriptions</dt><dd id="subscriptions-count">0</dd></div>
     </dl>
-    <button id="export" type="button">JSON jetzt herunterladen</button>
-    <p class="hint">Öffne deine Watchlist und danach „Abonniert“. Die Erweiterung aktualisiert die Datei automatisch. Bei einem Fehler steht die Firefox-Meldung oben.</p>
+    <button id="export" type="button">Download JSON</button>
+    <p class="hint">Open your Watchlist and then Subscriptions. The extension updates the file automatically. Firefox error details appear above.</p>
   </main>
   <script src="popup.js"></script>
 </body>

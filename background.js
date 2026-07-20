@@ -38,14 +38,14 @@ async function downloadBackup(backup) {
   try {
     const downloadId = await browser.downloads.download({
       url,
-      filename: "AniWorld-Sicherung/aniworld-listen.json",
+      filename: "AniWorld-Backup/aniworld-lists.json",
       conflictAction: "overwrite",
       saveAs: false
     });
     hideDownloadFromHistory(downloadId).catch(() => {});
     const status = {
       ok: true,
-      message: `Download an Firefox uebergeben (ID ${downloadId}).`,
+      message: `Download sent to Firefox (ID ${downloadId}).`,
       updatedAt: new Date().toISOString()
     };
     await browser.storage.local.set({ [EXPORT_STATUS_KEY]: status });
@@ -53,7 +53,7 @@ async function downloadBackup(backup) {
   } catch (error) {
     const status = {
       ok: false,
-      message: `Download fehlgeschlagen: ${error.message}`,
+      message: `Download failed: ${error.message}`,
       updatedAt: new Date().toISOString()
     };
     await browser.storage.local.set({ [EXPORT_STATUS_KEY]: status });
@@ -87,6 +87,6 @@ async function hideDownloadFromHistory(downloadId) {
 
 async function clearBackupDownloadsFromHistory() {
   await browser.downloads.erase({
-    filenameRegex: "AniWorld-Sicherung[\\\\/]aniworld-listen\\.json$"
+    filenameRegex: "AniWorld-Backup[\\\\/]aniworld-lists\\.json$"
   });
 }
